@@ -21,7 +21,7 @@
     "dev": "rollup -cw",
     "lint": "eslint . --ext .tsx,.ts --fix --max-warnings=0",
     "stylelint": "stylelint \"**/*.scss\" --fix",
-    "prepush": "yarn stylelint && yarn lint",
+    "prepush": "npm run stylelint && npm run lint",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
@@ -33,7 +33,7 @@
   ],
   "types": "dist/index.d.ts",
   "peerDependencies": {
-    "react": "^18"
+    "react": "^18 || ^19"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -44,9 +44,9 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-typescript": "^8.3.0",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^14.2.1",
     "@types/jest": "^27.0.2",
-    "@types/react": "^18.2.67",
+    "@types/react": "^18.2.67 || ^19.0.0",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "autoprefixer": "^10.4.2",
@@ -72,8 +72,8 @@
     "postcss": "^8.4.5",
     "postcss-scss": "^4.0.2",
     "prettier": "^2.5.1",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19",
     "rollup": "^2.60.0",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-postcss": "^4.0.1",

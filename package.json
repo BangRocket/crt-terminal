@@ -1,10 +1,10 @@
 {
-  "name": "crt-terminal-demo",
-  "version": "1.0.0",
+  "name": "spygame-terminal",
+  "version": "1.1.0",
   "description": "Retro looking CRT terminal for web",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jquesnelle/crt-terminal.git"
+    "url": "git+https://github.com/bangrocket/crt-terminal.git"
   },
   "keywords": [
     "crt",
@@ -13,25 +13,26 @@
     "react",
     "typescript"
   ],
-  "author": "Dmitriy Lipin, Nojsja",
+  "author": "Dmitriy Lipin, Nojsja, Joshua Heidorn",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jquesnelle/crt-terminal/issues"
+    "url": "https://github.com/bangrocket/crt-terminal/issues"
   },
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "packageManager": "npm@7.0.0",
   "scripts": {
     "build": "turbo run build --no-daemon",
     "dev": "turbo run dev --parallel --no-daemon",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepush:app": "yarn --cwd ./apps/web prepush",
-    "prepush:terminal": "yarn --cwd ./packages/crt-terminal prepush",
-    "prepush": "yarn prepush:app && yarn prepush:terminal"
+    "prepush:app": "npm run --prefix ./apps/web prepush",
+    "prepush:terminal": "npm run --prefix ./packages/crt-terminal prepush",
+    "prepush": "npm run prepush:app && npm run prepush:terminal"
   },
   "devDependencies": {
     "husky": "4.2.3",
@@ -40,7 +41,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn prepush"
+      "pre-commit": "npm run prepush"
     }
   },
   "engines": {

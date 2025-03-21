@@ -25,18 +25,18 @@
     "start": "next start",
     "lint": "next lint --fix --max-warnings=0",
     "stylelint": "stylelint \"**/*.scss\" --fix",
-    "prepush": "yarn stylelint && yarn lint"
+    "prepush": "npm run stylelint && npm run lint"
   },
   "dependencies": {
     "@jquesnelle/crt-terminal": "*",
     "next": "14.1.4",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@next/eslint-plugin-next": "^14.1.4",
-    "@types/react": "^18.2.67",
+    "@types/react": "^18.2.67 || ^19.0.0",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "airbnb": "^0.0.2",

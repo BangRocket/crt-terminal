@@ -142,12 +142,14 @@ function useTerminalController({
   const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     if (inputLocked) return;
     const newValue = event.currentTarget.value;
-    const nativeEvent = event.nativeEvent as InputEvent;
+    // Use optional chaining to safely access nativeEvent properties
+    // This ensures compatibility with React 19's synthetic events
+    const nativeEvent = event.nativeEvent as InputEvent | undefined;
 
-    if (nativeEvent.inputType === 'insertText') addCharacter(newValue);
-    if (nativeEvent.inputType === 'insertFromPaste') addCharacter(newValue);
-    if (nativeEvent.inputType === 'deleteContentBackward') removeCharacter(Keyboard.BACKSPACE);
-    if (nativeEvent.inputType === 'deleteContentForward') removeCharacter(Keyboard.DELETE)
+    if (nativeEvent?.inputType === 'insertText') addCharacter(newValue);
+    if (nativeEvent?.inputType === 'insertFromPaste') addCharacter(newValue);
+    if (nativeEvent?.inputType === 'deleteContentBackward') removeCharacter(Keyboard.BACKSPACE);
+    if (nativeEvent?.inputType === 'deleteContentForward') removeCharacter(Keyboard.DELETE);
   };
 
   const handleKeyboardEvent = (key: string) => {

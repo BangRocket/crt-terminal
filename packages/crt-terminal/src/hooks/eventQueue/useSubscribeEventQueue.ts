@@ -73,6 +73,15 @@ function useSubscribeEventQueue({
       setActiveEvent(event);
       interpretEvent(event);
     }
+    
+    // Return cleanup function for React 19 compatibility
+    return () => {
+      // Clean up any pending operations if component unmounts
+      // during an active event processing
+      if (activeEvent) {
+        nullifyActiveEvent();
+      }
+    };
     // disabled due to inner structure: nextEvent and interpretEvent only matter when queue state updated, i.e. item enqueued or dequeued
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queueState, activeEvent]);

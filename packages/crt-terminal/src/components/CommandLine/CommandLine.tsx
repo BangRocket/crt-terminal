@@ -79,4 +79,5 @@ const CommandLine = React.forwardRef<HTMLInputElement, CommandLineProps>(
   },
 );
 
+CommandLine.displayName = 'CommandLine';
 export default CommandLine;

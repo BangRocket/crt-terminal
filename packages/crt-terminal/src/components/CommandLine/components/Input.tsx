@@ -8,10 +8,10 @@ import React, {
 type InputProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const element = useRef<HTMLInputElement>();
-  const inputEvent = useRef<React.FormEvent<HTMLInputElement>>();
-  const onChangeEvent = useRef<React.ChangeEvent<HTMLInputElement>>();
-  const inputTarget = useRef<EventTarget & HTMLInputElement>();
+  const element = useRef<HTMLInputElement>(null);
+  const inputEvent = useRef<React.FormEvent<HTMLInputElement>>(null);
+  const onChangeEvent = useRef<React.ChangeEvent<HTMLInputElement>>(null);
+  const inputTarget = useRef<EventTarget & HTMLInputElement>(null);
   const inputing = useRef(false);
   const {
     onCompositionEnd,

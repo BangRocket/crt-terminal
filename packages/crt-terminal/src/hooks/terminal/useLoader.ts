@@ -61,7 +61,13 @@ function useLoader({ slides, loaderSpeed, onSetOuterState }: LoaderProps) {
     } else if (shouldStopLoading) {
       clearTimeoutState();
     }
-    return () => {};
+    
+    // Return a proper cleanup function for React 19 compatibility
+    return () => {
+      if (activeTimeout) {
+        clearTimeout(activeTimeout);
+      }
+    };
     // disabled due to inner structure: nextSlide only matters when activeTimeout or isLoading updated
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading, activeTimeout]);

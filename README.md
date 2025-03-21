@@ -1,6 +1,6 @@
 # CRT terminal
 
-Simple retro styled React-hooks-based terminal shell.
+Simple retro styled React-hooks-based terminal shell with React 19 support.
 
 Special support for chinese **Pinyin** input.
 
@@ -21,8 +21,6 @@ Special support for chinese **Pinyin** input.
 The best way to use crt-terminal is to install it from npm and include it into your app.
 
 ```bash
-yarn add @jquesnelle/crt-terminal
-
 npm install @jquesnelle/crt-terminal
 ```
 
@@ -146,8 +144,12 @@ Command history saves entered commands, but no more then `maxHistoryCommands`. Y
 
 # Repo
 
-It is a [turborepo](https://turborepo.org/)-based monorepo set up for testing and developing. Library itself is inside packages/crt-terminal, demo app is inside apps/web; to start locally just `yarn dev` in root folder.
+It is a [turborepo](https://turborepo.org/)-based monorepo set up for testing and developing. Library itself is inside packages/crt-terminal, demo app is inside apps/web; to start locally just `npm run dev` in root folder.
+
+# React Compatibility
+
+This library is compatible with both React 18 and React 19.
 
 # License
 
-MIT Licensed. Copyright (c) Dmitriy Lipin 2022.
+MIT Licensed. Copyright (c) Joshua Heidorn 2025.

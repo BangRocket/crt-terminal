@@ -21,7 +21,7 @@ const PrinterWord = function PrinterWord({ word, children }: PropsWithChildren<P
             className={[classes.textWord, 'crt-text-word', className].join(' ')}
             data-crt-terminal={dataAttribute}
           >
-            <Character>{children}</Character>
+            <Character locked={false}>{children}</Character>
           </span>
         );
       case WordTypes.INLINE_TEXT:
@@ -35,7 +35,7 @@ const PrinterWord = function PrinterWord({ word, children }: PropsWithChildren<P
             href={word.href}
             onClick={word.onClick}
           >
-            <Character>{children}</Character>
+            <Character locked={false}>{children}</Character>
           </a>
         );
       case WordTypes.BUTTON:
@@ -48,7 +48,7 @@ const PrinterWord = function PrinterWord({ word, children }: PropsWithChildren<P
             onClick={word.onClick}
             disabled={word.disabled}
           >
-            <Character>{children}</Character>
+            <Character locked={false}>{children}</Character>
           </button>
         );
       case WordTypes.COMMAND:
@@ -58,8 +58,8 @@ const PrinterWord = function PrinterWord({ word, children }: PropsWithChildren<P
             className={[classes.commandWord, 'crt-command-word', className].join(' ')}
             data-crt-terminal={dataAttribute}
           >
-            <Character>{word.prompt}</Character>
-            <Character>{children}</Character>
+            <Character locked={false}>{word.prompt}</Character>
+            <Character locked={false}>{children}</Character>
           </span>
         );
       default:

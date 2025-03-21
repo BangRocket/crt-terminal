@@ -35,3 +35,7 @@ yarn-error.log*
 # turbo
 .turbo
 packages/crt-terminal/.rollup.cache
+
+packages/crt-terminal/jquesnelle-crt-terminal-1.0.29.tgz
+
+package-lock.json
